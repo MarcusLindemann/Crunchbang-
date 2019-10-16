@@ -60,10 +60,10 @@ setupVivaldi() {
     echo 'deb https://repo.vivaldi.com/archive/deb/ stable main' | sudo tee '/etc/apt/sources.list.d/vivaldi.list'
 }
 
-setupBrave() {
+setupBraveBrowser() {
     addAptKey "${KEY_URLS_BRAVE[@]}" || return 1
-    say 'Creating APT sources file...' 1
-    echo 'deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ trusty maindeb' | sudo tee '/etc/apt/sources.list.d/brave-browser-release-trusty.list'
+    say "Creating APT sources file for release ..." 1
+    echo 'deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ trusty main' | sudo tee "/etc/apt/sources.list.d/brave-browser-release-trusty.list"
 }
 
 # opera has broken dependency chain in stretch
